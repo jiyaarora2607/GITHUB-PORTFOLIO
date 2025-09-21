@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        #predictor {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div id="predictor">
+        <h1>Stock Price Predictor</h1>
+        <input type="text" id="stockSymbol" placeholder="Enter Stock Symbol" />
+        <button id="predictBtn">Predict Stock Price</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById('predictBtn').addEventListener('click', function() {
+            const stockSymbol = document.getElementById('stockSymbol').value;
+            // Call your prediction logic here
+            if (stockSymbol) {
+                // Simulating a prediction result
+                const predictedPrice = (Math.random() * 1000).toFixed(2);
+                document.getElementById('result').innerText = `Predicted price for ${stockSymbol}: $${predictedPrice}`;
+            } else {
+                alert('Please enter a stock symbol.');
+            }
+        });
+    </script>
+</body>
+</html>
